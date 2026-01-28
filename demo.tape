@@ -17,4 +17,4 @@ Sleep 5s
 # Select option 1
 Type "1"
 Enter
-Sleep 3s
+Sleep 8s
