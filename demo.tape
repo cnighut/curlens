@@ -12,9 +12,13 @@ Set Padding 20
 Type "curlens -d 'python script to pause glue jobs'"
 Sleep 500ms
 Enter
-Sleep 5s
+Sleep 3s
 
 # Select option 1
 Type "1"
 Enter
-Sleep 12s
+Sleep 2s
+
+# Cancel before cursor agent takes over (for demo purposes)
+Ctrl+C
+Sleep 3s
