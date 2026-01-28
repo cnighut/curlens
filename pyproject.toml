@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "curlens"
+version = "0.1.0"
+description = "Local Cursor chat summary indexer and search tool"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Curlens Contributors"}
+]
+keywords = ["cursor", "cli", "chat", "search", "summary"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+]
+dependencies = []
+
+[project.scripts]
+curlens = "curlens.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/curlens/curlens"
+Repository = "https://github.com/curlens/curlens"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["curlens*"]
