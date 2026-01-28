@@ -19,7 +19,7 @@ Type "1"
 Enter
 
 # Wait for cursor agent to open and show some output
-Sleep 10s
+Sleep 20s
 
 # Exit
 Ctrl+C
