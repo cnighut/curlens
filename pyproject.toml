@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 license = {text = "MIT"}
 authors = [
-    {name = "Curlens Contributors"}
+    {name = "cnighut", email = "cnighut@users.noreply.github.com"}
 ]
 keywords = ["cursor", "cli", "chat", "search", "summary"]
 classifiers = [
@@ -30,8 +30,9 @@ dependencies = []
 curlens = "curlens.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/curlens/curlens"
-Repository = "https://github.com/curlens/curlens"
+Homepage = "https://github.com/cnighut/curlens"
+Repository = "https://github.com/cnighut/curlens"
+Issues = "https://github.com/cnighut/curlens/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]

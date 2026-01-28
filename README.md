@@ -1,5 +1,6 @@
 # Curlens
 
+[![PyPI version](https://img.shields.io/pypi/v/curlens.svg)](https://pypi.org/project/curlens/)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Cursor CLI](https://img.shields.io/badge/Cursor-CLI-purple.svg)](https://cursor.com/cli)
@@ -106,7 +107,12 @@ The hash folders in `chats/` are MD5 hashes of workspace paths. Curlens maps the
 ## Install
 
 ```bash
-git clone https://github.com/you/curlens
+pip install curlens
+```
+
+Or from source:
+```bash
+git clone https://github.com/cnighut/curlens
 cd curlens
 pip install -e .
 ```
