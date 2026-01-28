@@ -17,8 +17,10 @@ Sleep 3s
 # Select option 1
 Type "1"
 Enter
-Sleep 2s
 
-# Cancel before cursor agent takes over (for demo purposes)
+# Wait for cursor agent to open and show some output
+Sleep 10s
+
+# Exit
 Ctrl+C
-Sleep 3s
+Sleep 2s
