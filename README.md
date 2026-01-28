@@ -7,6 +7,8 @@
 
 Search and resume your Cursor CLI chat sessions by description.
 
+![Curlens Demo](demo.gif)
+
 ## The Problem
 
 You use Cursor CLI across multiple projects. After a few days, you have dozens of chats scattered across different workspaces. You remember discussing "flink job optimization" somewhere, but:
