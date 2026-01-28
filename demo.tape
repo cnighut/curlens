@@ -14,7 +14,7 @@ Sleep 500ms
 Enter
 Sleep 5s
 
-# Quit to show the flow
-Type "q"
+# Select option 1
+Type "1"
 Enter
-Sleep 1s
+Sleep 3s
