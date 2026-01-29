@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "curlens"
-version = "0.1.1"
+version = "0.1.2"
 description = "Local Cursor chat summary indexer and search tool"
 readme = "README.md"
 requires-python = ">=3.9"
