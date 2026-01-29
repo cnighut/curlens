@@ -240,6 +240,11 @@ Curlens uses `cursor agent -p` to generate summaries, which consumes API tokens 
 
 **Note**: Hooks fire frequently during active chats. Each hook only processes *new* messages incrementally, so repeated summaries for the same chat are efficient updates, not full regenerations.
 
+**Auto-skipped chats** (no LLM calls):
+- "New Agent" chats created after Jan 2026 (these are curlens's own `cursor agent -p` calls)
+- Chats with trivial content (<100 chars or <50 alphabetic chars)
+- Meta-chats containing summarization prompts
+
 ## CLI-Only
 
 This tool is designed for **Cursor CLI** (`cursor agent`). IDE-originated chats are automatically skipped.

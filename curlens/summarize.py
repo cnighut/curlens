@@ -83,6 +83,7 @@ def run_agent(prompt: str, model: str = "grok", timeout: int = 60) -> Optional[s
     try:
         result = subprocess.run(
             ["cursor", "agent", "-p", "--model", model, prompt],
+            stdin=subprocess.DEVNULL,
             capture_output=True,
             text=True,
             timeout=timeout,
@@ -107,7 +108,7 @@ def generate_summary(
         return None
     
     prompt = build_summary_prompt(messages, max_words, existing_summary)
-    summary = run_agent(prompt, model)
+    summary = run_agent(prompt, model, timeout=120)
     
     if summary and word_count(summary) > max_words:
         summary = truncate_to_words(summary, max_words)

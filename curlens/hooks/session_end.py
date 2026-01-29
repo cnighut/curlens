@@ -88,6 +88,16 @@ def main() -> None:
     meta = read_meta(db_path)
     chat_name = meta.get("name", "Unnamed") if meta else "Unnamed"
     
+    # Skip "New Agent" chats created after Jan 2026 - these are typically curlens's
+    # own summarization calls (cursor agent -p). Before Jan 2026, Cursor CLI named
+    # all chats "New Agent" by default, so we process those.
+    JAN_2026_MS = 1767205800000  # Jan 1, 2026 00:00:00 UTC in milliseconds
+    created_at = meta.get("createdAt", 0) if meta else 0
+    if chat_name == "New Agent" and created_at >= JAN_2026_MS:
+        log_debug(config, f"Skipping 'New Agent' chat {conversation_id} (post-Jan-2026)")
+        print(json.dumps({"continue": True}))
+        return
+    
     blobs = list_json_blobs(db_path)
     blob_ids = [blob_id for blob_id, _ in blobs]
     

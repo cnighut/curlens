@@ -88,15 +88,28 @@ def main() -> None:
 
 def _print_results(results: list[dict]) -> None:
     """Print results to console."""
+    from datetime import datetime
+    
     print(f"\nFound {len(results)} matching chat(s):\n")
     for idx, r in enumerate(results, start=1):
         name = r.get('chat_name', 'Unnamed')
         directory = r.get('chat_directory', 'Unknown')
         summary = r.get('summary_text', '')[:120]
         reason = r.get('reason', '')
+        created_at = r.get('created_at', 0)
+        
+        # Format date from milliseconds timestamp
+        date_str = "Unknown"
+        if created_at:
+            try:
+                dt = datetime.fromtimestamp(created_at / 1000)
+                date_str = dt.strftime("%b %d, %Y %H:%M")
+            except (ValueError, OSError):
+                pass
         
         print(f"[{idx}] {name}")
         print(f"    Dir: {directory}")
+        print(f"    Time: {date_str}")
         print(f"    {summary}...")
         if reason:
             print(f"    Why: {reason}")
